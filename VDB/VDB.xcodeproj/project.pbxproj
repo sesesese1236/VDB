@@ -15,6 +15,9 @@
 		D584DCDE2671CF3200716B04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D584DCDC2671CF3200716B04 /* LaunchScreen.storyboard */; };
 		D584DCE92671CF3400716B04 /* VDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584DCE82671CF3400716B04 /* VDBTests.swift */; };
 		D584DCF42671CF3400716B04 /* VDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584DCF32671CF3400716B04 /* VDBUITests.swift */; };
+		D5C14DFC267B0CF80099FD1E /* UpdateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C14DFB267B0CF80099FD1E /* UpdateListViewController.swift */; };
+		D5C14E01267B12980099FD1E /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C14E00267B12980099FD1E /* UpdateViewController.swift */; };
+		D5C14E06267B2ABB0099FD1E /* DeleteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C14E05267B2ABB0099FD1E /* DeleteListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		D584DCEF2671CF3400716B04 /* VDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D584DCF32671CF3400716B04 /* VDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VDBUITests.swift; sourceTree = "<group>"; };
 		D584DCF52671CF3400716B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5C14DFB267B0CF80099FD1E /* UpdateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateListViewController.swift; sourceTree = "<group>"; };
+		D5C14E00267B12980099FD1E /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		D5C14E05267B2ABB0099FD1E /* DeleteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				D584DCD32671CF0200716B04 /* SceneDelegate.swift */,
 				D584DCD52671CF0200716B04 /* ViewController.swift */,
 				D584DCD72671CF0300716B04 /* Main.storyboard */,
+				D5C14E05267B2ABB0099FD1E /* DeleteListViewController.swift */,
+				D5C14E00267B12980099FD1E /* UpdateViewController.swift */,
+				D5C14DFB267B0CF80099FD1E /* UpdateListViewController.swift */,
 				D584DCDA2671CF3200716B04 /* Assets.xcassets */,
 				D584DCDC2671CF3200716B04 /* LaunchScreen.storyboard */,
 				D584DCDF2671CF3200716B04 /* Info.plist */,
@@ -259,8 +268,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D584DCD62671CF0200716B04 /* ViewController.swift in Sources */,
+				D5C14E06267B2ABB0099FD1E /* DeleteListViewController.swift in Sources */,
 				D584DCD22671CF0200716B04 /* AppDelegate.swift in Sources */,
 				D584DCD42671CF0200716B04 /* SceneDelegate.swift in Sources */,
+				D5C14DFC267B0CF80099FD1E /* UpdateListViewController.swift in Sources */,
+				D5C14E01267B12980099FD1E /* UpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
