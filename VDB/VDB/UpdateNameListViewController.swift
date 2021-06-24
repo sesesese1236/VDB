@@ -1,24 +1,33 @@
 //
-//  UpdateListViewController.swift
+//  UpdateNameListViewController.swift
 //  VDB
 //
-//  Created by 先生 on 2021/06/17.
+//  Created by WENDRA RIANTO on 2021/06/24.
 //
 
 import UIKit
 import RealmSwift
 
-
-class UpdateListViewController:UIViewController, UITableViewDelegate, UITableViewDataSource{
+class UpdateNameListViewController:UIViewController, UITableViewDelegate, UITableViewDataSource{
     let vt:VT = VT()
     let realm = try! Realm()
     @IBOutlet weak var tView: UITableView!
+    @IBOutlet weak var Name: UILabel!
     
-    var datalist=["a","b","c","d","e"]
+    public var name:String = ""
+    public var skill1:String = ""
+    public var skill2:String = ""
+    public var skill3:String = ""
+    public var skill4:String = ""
+    var datalist=["",""]
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        datalist=[skill1,skill2,skill3,skill4]
         tView.delegate = self
         tView.dataSource = self
+        
+        Name.text="Edit "+name
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return datalist.count
@@ -31,7 +40,7 @@ class UpdateListViewController:UIViewController, UITableViewDelegate, UITableVie
     func tableView(_ tableView:UITableView, didSelectRowAt indextPath: IndexPath){
         let storyboard:UIStoryboard = self.storyboard!
         
-        let nextViewController:UpdateNameListViewController = storyboard.instantiateViewController(withIdentifier:"UpdateNameListViewController") as! UpdateNameListViewController
+        let nextViewController:UpdateViewController = storyboard.instantiateViewController(withIdentifier:"UpdateViewController") as! UpdateViewController
         
         nextViewController.name = datalist[indextPath.row]
         nextViewController.skill1 = "test1"

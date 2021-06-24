@@ -5,9 +5,12 @@
 //  Created by 先生 on 2021/06/17.
 //
 
-import Foundation
 import UIKit
+import RealmSwift
+
 class UpdateViewController: UIViewController{
+    let vt:VT = VT()
+    let realm = try! Realm()
     public var name:String = ""
     public var skill1:String = ""
     public var skill2:String = ""
