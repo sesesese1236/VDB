@@ -9,32 +9,34 @@ import UIKit
 import RealmSwift
 
 class DeleteListViewController: UIViewController, UITableViewDelegate,UITableViewDataSource{
-    let vt:VT = VT()
-    let realm = try! Realm()
+    
     @IBOutlet weak var tView: UITableView!
     
-    var datalist = ["a","b","c","d","e"]
+    var nameList:Results<VT>? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tView.delegate = self
         tView.dataSource = self
+        let realm = try! Realm()
+        nameList = realm.objects(VT.self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section : Int) -> Int{
-        return datalist.count
+        return nameList!.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = "del:" + String(indexPath.section) + "/" + String(indexPath.row) + "/" + datalist[indexPath.row]
+        cell.textLabel?.text = nameList![indexPath.row].Alliance + "/"  + nameList![indexPath.row].Name
         return cell;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        datalist.remove(at: indexPath.row)
-        
+        let realm = try! Realm()
+        try! realm.write{
+            realm.delete(nameList![indexPath.row])
+        }
         tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.left)
         
         tableView.reloadData()

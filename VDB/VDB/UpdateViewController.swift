@@ -8,21 +8,63 @@
 import UIKit
 import RealmSwift
 
-class UpdateViewController: UIViewController{
-    let vt:VT = VT()
-    let realm = try! Realm()
+class UpdateViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
     public var name:String = ""
-    public var skill1:String = ""
-    public var skill2:String = ""
-    public var skill3:String = ""
-    public var skill4:String = ""
+    public var id:String = ""
+    
+    var nameList:Results<VT>? = nil
+    
+    @IBOutlet weak var Alliance: UITextField!
+    @IBOutlet weak var Name: UITextField!
+    @IBOutlet weak var Status: UIPickerView!
+    let status = ["Active","Retire","Vacuum","Incoming"]
+    var statusStr = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(name)
-        print(skill1)
-        print(skill2)
-        print(skill3)
-        print(skill4)
+        
+        let realm = try! Realm()
+
+        nameList = realm.objects(VT.self).filter("id = '\(id)'")
+        Name.text = nameList![0].Name
+        Alliance.text = nameList![0].Alliance
+        Status.delegate = self
+        Status.dataSource = self
+        
+        for i in 0...3{
+            if status[i] == nameList![0].Status{
+                Status.selectRow(i, inComponent: 0, animated: true)
+            }
+        }
+        statusStr = status[Status.selectedRow(inComponent: 0)]
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        view.endEditing(true)
+    }
+    func numberOfComponents(in Status: UIPickerView) -> Int {
+        return 1
+    }
+    func pickerView(_ Status: UIPickerView,
+                    numberOfRowsInComponent component: Int) -> Int {
+        return status.count
+    }
+    func pickerView(_ Status: UIPickerView,
+                    titleForRow row: Int,
+                    forComponent component: Int) -> String? {
+        return status[row]
+    }
+    func pickerView(_ Status: UIPickerView,
+                    didSelectRow row: Int,
+                    inComponent component: Int) {
+       statusStr = status[row]
+    }
+    @IBAction func edit(_ sender: UIButton) {
+        let realm = try! Realm()
+        try! realm.write {
+            nameList![0].Name = Name.text!
+            nameList![0].Alliance = Alliance.text!
+            nameList![0].Status = statusStr
+        }
     }
     
 }
