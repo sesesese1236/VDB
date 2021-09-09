@@ -28,8 +28,7 @@ class DeleteListViewController: UIViewController, UITableViewDelegate,UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = nameList![indexPath.row].Alliance + "/"  + nameList![indexPath.row].Name
-        return cell;
+        cell.textLabel?.text = nameList![indexPath.row].Alliance + "/"  + nameList![indexPath.row].Name + "/"  +            nameList![indexPath.row].Status;        return cell;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

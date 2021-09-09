@@ -12,6 +12,7 @@ class UpdateViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     public var name:String = ""
     public var id:String = ""
+    public var mode:Int = 0
     
     var nameList:Results<VT>? = nil
     

@@ -11,8 +11,13 @@ import RealmSwift
 
 class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    public var name:String = ""
+    public var id:String = ""
+    public var mode:Int = 0
+    
     let vt:VT = VT()
     let realm = try! Realm()
+    var nameList:Results<VT>? = nil
     @IBOutlet weak var Alliance: UITextField!
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var Status: UIPickerView!
@@ -23,6 +28,19 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // Do any additional setup after loading the view.
         Status.delegate = self
         Status.dataSource = self
+        
+        if(mode == 1){
+            nameList = realm.objects(VT.self).filter("id = '\(id)'")
+            Name.text = nameList![0].Name
+            Alliance.text = nameList![0].Alliance
+        
+            for i in 0...3{
+                if status[i] == nameList![0].Status{
+                    Status.selectRow(i, inComponent: 0, animated: true)
+                    }
+                }
+            
+        }
         statusStr = status[Status.selectedRow(inComponent: 0)]
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
@@ -30,13 +48,19 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func Register(_ sender: UIButton) {
-        vt.Alliance = Alliance.text!
+        if(mode == 0){vt.Alliance = Alliance.text!
         vt.Name = Name.text!
         vt.Status = statusStr
         
         try! realm.write {
             realm.add(vt)
-        }
+        }}
+        
+        else if(mode == 1){try! realm.write {
+            nameList![0].Name = Name.text!
+            nameList![0].Alliance = Alliance.text!
+            nameList![0].Status = statusStr
+        }}
     }
     func numberOfComponents(in Status: UIPickerView) -> Int {
         return 1

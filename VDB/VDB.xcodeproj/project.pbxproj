@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		33C926D80053AB057C55373F /* Pods_VDB_VDBUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDE2D1F8A5912919BE906F04 /* Pods_VDB_VDBUITests.framework */; };
-		478E801D2684528A00B9088D /* UpdateNameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E801C2684528A00B9088D /* UpdateNameListViewController.swift */; };
 		478E802A26845D7C00B9088D /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 478E802926845D7B00B9088D /* RealmSwift.framework */; };
 		478E8032268462CC00B9088D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478E8031268462CC00B9088D /* RegisterViewController.swift */; };
 		5B5672BD9E43C0D1B0B6CFEE /* Pods_VDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB44CDDDB4C951AB1F67A7D7 /* Pods_VDB.framework */; };
@@ -20,7 +19,6 @@
 		D584DCDE2671CF3200716B04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D584DCDC2671CF3200716B04 /* LaunchScreen.storyboard */; };
 		D584DCE92671CF3400716B04 /* VDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584DCE82671CF3400716B04 /* VDBTests.swift */; };
 		D584DCF42671CF3400716B04 /* VDBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D584DCF32671CF3400716B04 /* VDBUITests.swift */; };
-		D5C14DFC267B0CF80099FD1E /* UpdateListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C14DFB267B0CF80099FD1E /* UpdateListViewController.swift */; };
 		D5C14E01267B12980099FD1E /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C14E00267B12980099FD1E /* UpdateViewController.swift */; };
 		D5C14E06267B2ABB0099FD1E /* DeleteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C14E05267B2ABB0099FD1E /* DeleteListViewController.swift */; };
 		DC45FBFC957DE079BD2A114A /* Pods_VDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 523FE77FC05B5B3E2A1E8207 /* Pods_VDBTests.framework */; };
@@ -45,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		44AB09BAFB13B17B3C3EE09D /* Pods-VDBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VDBTests.debug.xcconfig"; path = "Target Support Files/Pods-VDBTests/Pods-VDBTests.debug.xcconfig"; sourceTree = "<group>"; };
-		478E801C2684528A00B9088D /* UpdateNameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNameListViewController.swift; sourceTree = "<group>"; };
 		478E802926845D7B00B9088D /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		478E8031268462CC00B9088D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		523FE77FC05B5B3E2A1E8207 /* Pods_VDBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VDBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,7 +64,6 @@
 		D584DCEF2671CF3400716B04 /* VDBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VDBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D584DCF32671CF3400716B04 /* VDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VDBUITests.swift; sourceTree = "<group>"; };
 		D584DCF52671CF3400716B04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D5C14DFB267B0CF80099FD1E /* UpdateListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateListViewController.swift; sourceTree = "<group>"; };
 		D5C14E00267B12980099FD1E /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
 		D5C14E05267B2ABB0099FD1E /* DeleteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteListViewController.swift; sourceTree = "<group>"; };
 		DDE2D1F8A5912919BE906F04 /* Pods_VDB_VDBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VDB_VDBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,10 +154,8 @@
 				D584DCD52671CF0200716B04 /* ViewController.swift */,
 				D584DCD72671CF0300716B04 /* Main.storyboard */,
 				478E8031268462CC00B9088D /* RegisterViewController.swift */,
-				478E801C2684528A00B9088D /* UpdateNameListViewController.swift */,
 				D5C14E05267B2ABB0099FD1E /* DeleteListViewController.swift */,
 				D5C14E00267B12980099FD1E /* UpdateViewController.swift */,
-				D5C14DFB267B0CF80099FD1E /* UpdateListViewController.swift */,
 				D584DCDA2671CF3200716B04 /* Assets.xcassets */,
 				D584DCDC2671CF3200716B04 /* LaunchScreen.storyboard */,
 				D584DCDF2671CF3200716B04 /* Info.plist */,
@@ -429,9 +423,7 @@
 				D5C14E06267B2ABB0099FD1E /* DeleteListViewController.swift in Sources */,
 				D584DCD22671CF0200716B04 /* AppDelegate.swift in Sources */,
 				478E8032268462CC00B9088D /* RegisterViewController.swift in Sources */,
-				478E801D2684528A00B9088D /* UpdateNameListViewController.swift in Sources */,
 				D584DCD42671CF0200716B04 /* SceneDelegate.swift in Sources */,
-				D5C14DFC267B0CF80099FD1E /* UpdateListViewController.swift in Sources */,
 				D5C14E01267B12980099FD1E /* UpdateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

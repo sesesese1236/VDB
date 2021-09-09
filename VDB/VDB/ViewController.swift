@@ -24,7 +24,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var allianceDistinctList = [String]()
     var nameList:Results<VT>? = nil
     var Alliance = ""
+    var Name = ""
+    var Id = ""
     var now = 0
+    var count = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -45,12 +48,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         //let data = [allianceDistinctList,nameList!] as [Any]
-        var count = 0
+        
         
         if( now == 0 ){
             count = allianceDistinctList.count
         }
-        else{
+        else if(now == 1){
             count = nameList!.count
         }
         return count
@@ -77,6 +80,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             tableView.reloadData()
         }
+        else if(now == 1){
+            Name = nameList![indexPath.row].Name
+            Id = nameList![indexPath.row].id
+        }
     }
     @IBAction func back(_ sender: UIButton) {
         now = 0
@@ -84,5 +91,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 
+    @IBAction func edit(_ sender: UIButton) {
+        if(now == 1 && Id != "")
+            {let storyboard:UIStoryboard = self.storyboard!
+            
+            let nextViewController:UpdateViewController = storyboard.instantiateViewController(withIdentifier:"UpdateViewController") as! UpdateViewController
+            
+            nextViewController.name = Name
+            nextViewController.id = Id
+            
+            self.present(nextViewController,animated: true, completion: nil)}
+    }
 }
 
