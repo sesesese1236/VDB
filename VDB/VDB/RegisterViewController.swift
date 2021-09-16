@@ -21,6 +21,7 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     @IBOutlet weak var Alliance: UITextField!
     @IBOutlet weak var Name: UITextField!
     @IBOutlet weak var Status: UIPickerView!
+    @IBOutlet weak var Input: UIButton!
     let status = ["Active","Retire","Vacuum","Incoming"]
     var statusStr = ""
     override func viewDidLoad() {
@@ -28,8 +29,10 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         // Do any additional setup after loading the view.
         Status.delegate = self
         Status.dataSource = self
-        
-        if(mode == 1){
+        if(mode == 0){
+            Input.setTitle("Register", for: .normal)
+        }
+        else if(mode == 1){
             nameList = realm.objects(VT.self).filter("id = '\(id)'")
             Name.text = nameList![0].Name
             Alliance.text = nameList![0].Alliance
@@ -39,6 +42,7 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
                     Status.selectRow(i, inComponent: 0, animated: true)
                     }
                 }
+            Input.setTitle("Edit", for: .normal)
             
         }
         statusStr = status[Status.selectedRow(inComponent: 0)]
@@ -48,19 +52,23 @@ class RegisterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     @IBAction func Register(_ sender: UIButton) {
-        if(mode == 0){vt.Alliance = Alliance.text!
-        vt.Name = Name.text!
-        vt.Status = statusStr
+        if(mode == 0){
+            vt.Alliance = Alliance.text!
+            vt.Name = Name.text!
+            vt.Status = statusStr
         
-        try! realm.write {
-            realm.add(vt)
-        }}
+            try! realm.write {
+                realm.add(vt)
+            }
+        }
         
-        else if(mode == 1){try! realm.write {
-            nameList![0].Name = Name.text!
-            nameList![0].Alliance = Alliance.text!
-            nameList![0].Status = statusStr
-        }}
+        else if(mode == 1){
+            try! realm.write {
+                nameList![0].Name = Name.text!
+                nameList![0].Alliance = Alliance.text!
+                nameList![0].Status = statusStr
+            }
+        }
     }
     func numberOfComponents(in Status: UIPickerView) -> Int {
         return 1
